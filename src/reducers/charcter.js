@@ -1,0 +1,37 @@
+const initialState = {
+  charcters: [],
+  isloading: true,
+  error: false,
+};
+
+export default function charcterReducer(
+  state = initialState,
+  action,
+) {
+  // eslint-disable-next-line no-console
+  switch (action.type) {
+    case 'FETCH_CHARCTER_BEGIN':
+      return {
+        ...state,
+        isloading: true,
+        error: null,
+      };
+
+    case 'FETCH_CHARCTER_SUCCESS':
+      return {
+        ...state,
+        isloading: false,
+        charcters: action.data.results,
+      };
+
+    case 'FETCH_CHARCTER_FAILURE':
+      return {
+        ...state,
+        isloading: false,
+        error: 'error',
+      };
+
+    default:
+      return state;
+  }
+}

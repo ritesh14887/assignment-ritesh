@@ -3,20 +3,20 @@
 import React, { Component } from 'react';
 
 class SortBox extends Component {
-    constructor() {
-        super();
-    }
+  constructor(props) {
+    super();
+  }
 
-    render() {
-        return (
-            <div className="sort-box">
-                <select>
-                    <option>Ascending</option>
-                    <option>Decending</option>
-                </select>
-            </div>
-        );
-    }
+  render() {
+    return (
+      <div className="sort-box">
+        <select>
+          <option>Name A-Z</option>
+          <option>Name Z-A</option>
+        </select>
+      </div>
+    );
+  }
 }
 
 export default SortBox;

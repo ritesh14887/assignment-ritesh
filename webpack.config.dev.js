@@ -5,17 +5,18 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const EsLintFormatter = require('eslint/lib/formatters/json');
 
+console.log(__dirname);
 
 module.exports = {
-  devtool: 'source-map',
+  devtool: 'inline-source-map',
   entry: [
     'webpack-hot-middleware/client',
-    './src/index'
+    './src/index',
   ],
   output: {
-    path: path.join(__dirname, 'dist'),
+    path: path.join(__dirname, 'public'),
     filename: 'bundle.js',
-    publicPath: '/static/'
+    publicPath: '/public/',
   },
   optimization: {
     minimizer: [
@@ -34,7 +35,7 @@ module.exports = {
     // Use NoErrorsPlugin for webpack 1.x
     new webpack.NoEmitOnErrorsPlugin(),
     new MiniCssExtractPlugin({
-      filename: 'spc.css'
+      filename: 'spc.css',
     }),
   ],
   module: {
@@ -66,7 +67,7 @@ module.exports = {
         include: path.join(__dirname, 'src'),
         use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
 
-      }
-    ]
-  }
+      },
+    ],
+  },
 };

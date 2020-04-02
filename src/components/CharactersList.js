@@ -1,23 +1,18 @@
 
 
-import React, { Component } from 'react';
-import Header from './Header';
+import React from 'react';
+import Character from './Character';
 
-class CharactersList extends Component {
-  constructor() {
-    super();
-    this.state = {
-
-    };
+class CharactersList extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
   }
 
   render() {
+    const { charcters } = this.props;
     return (
-
-      <div className="characters-list">
-        <Header tagline="RICK AND MORTY Charcters" />
-        Charterlist
-      </div>
+      charcters.map((item, key) => <Character charcter={item} />)
     );
   }
 }

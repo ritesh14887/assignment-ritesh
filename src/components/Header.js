@@ -1,34 +1,32 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { createUseStyles } from 'react-jss';
 
-const useStyles = createUseStyles({
+const headerStyles = createUseStyles({
   bannerImage: {
     width: '100%',
+    fontFamily: 'Giffy',
+    padding: '30px 0 0 0',
+    fontSize: 60,
+    margin: 0,
+    textAlign: 'center',
+    color: '#ffffff',
+    backgroundColor: '#000',
   },
 });
 
 const Header = (props) => {
-  const classes = useStyles();
+  const classes = headerStyles();
   const { tagline } = props;
   return (
-    <header className={classes.bannerImage}>
-      <img
-        className={classes.bannerImage}
-        src="/images/header.jpg"
-        alt="banner"
-      />
-      <h3 className="tagline">
+    <header>
+      <h1 className={classes.bannerImage}>
         <span>{tagline}</span>
-      </h3>
+      </h1>
 
     </header>
 
   );
 };
 
-Header.propTypes = {
-  tagline: PropTypes.string.isRequired,
-};
 
 export default Header;

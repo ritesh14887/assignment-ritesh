@@ -4,7 +4,7 @@ const webpack = require('webpack');
 const config = require('./webpack.config.dev');
 
 const app = express();
-console.log('Express server');
+console.log('Express server on public path>>>>>>', config.output.publicPath);
 const compiler = webpack(config);
 
 app.use(require('webpack-dev-middleware')(compiler, {
