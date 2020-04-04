@@ -18,10 +18,12 @@ export default function charcterReducer(
       };
 
     case 'FETCH_CHARCTER_SUCCESS':
+      console.log('FETCH_CHARCTER_SUCCESS>>>>>> Reducer', action);
       return {
         ...state,
         isloading: false,
         charcters: action.data.results,
+        info: action.data.info,
       };
 
     case 'FETCH_CHARCTER_FAILURE':

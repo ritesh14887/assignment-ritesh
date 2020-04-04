@@ -6,16 +6,25 @@ import {
   Switch,
   Route,
 } from 'react-router-dom';
-import App from './components/App';
 import CharterList from './components/CharactersList';
 import store from './store';
+import Main from './components/Main';
+import { fetchCharcterInfoBegin } from './actions/actionCreators';
+
+function onAppInit(dispatch) {
+  dispatch(fetchCharcterInfoBegin());
+}
 
 const routerConfig = (
   <Provider store={store}>
     <Router>
       <Switch>
-        <Route exact path="/">
-          <App />
+        <Route
+          exact
+          path="/"
+          onEnter={onAppInit(store.dispatch)}
+        >
+          <Main />
         </Route>
         <Route path="/charcterlist">
           <CharterList />

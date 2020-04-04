@@ -1,6 +1,7 @@
 import React from 'react';
 import { withStyles } from 'react-jss';
 import { connect } from 'react-redux';
+import { compose, bindActionCreators } from 'redux';
 import Header from './Header';
 import Charcterlist from './CharactersList';
 import Filters from './filters';
@@ -65,25 +66,6 @@ class Main extends React.Component {
     };
   }
 
-  componentDidMount() {
-    const { fetchCharcterInfoBegin } = this.props;
-    fetchCharcterInfoBegin();
-    this.fetchPosts('https://rickandmortyapi.com/api/character/');
-  }
-
-  fetchPosts(url) {
-    const { fetchCharcterInfoSuccess } = this.props;
-    // eslint-disable-next-line no-undef
-    fetch(url)
-      .then(response => response.json())
-      .then(
-        data => (
-          fetchCharcterInfoSuccess(data)
-        ),
-      )
-      .catch(error => this.setState({ isLoading: false, error: true }));
-  }
-
   render() {
     const { isLoading, error } = this.state;
     const { classes, charcterData, isloading } = this.props;
@@ -113,4 +95,12 @@ Main.defaultProps = {
   isloading: true,
 };
 
-export default withStyles(appStyles)(Main);
+function mapStateToProps(state) {
+  console.log('state', state);
+  return {
+    charcterData: state,
+  };
+}
+
+
+export default compose(connect(mapStateToProps), withStyles(appStyles))(Main);

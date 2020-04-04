@@ -40,7 +40,7 @@ const charcterStyles = {
 
     },
     '& .item-detail': {
-      fontSize: '12px',
+      fontSize: '14px',
       display: 'flex',
       justifyContent: 'space-between',
       margin: '0 5px 4px 5px',
@@ -48,10 +48,11 @@ const charcterStyles = {
       padding: '6px 0 6px 0',
       alignItems: 'center',
       '& .title ': {
-        color: '#9b9b9b',
+        color: '#d1d1d1',
       },
       '& .description': {
         color: ' #e78c0c',
+        fontWeight: 700,
       },
 
     },
