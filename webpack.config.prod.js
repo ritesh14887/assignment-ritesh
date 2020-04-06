@@ -1,21 +1,18 @@
-var path = require('path');
-var webpack = require('webpack');
+const path = require('path');
+const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const AggressiveMergingPlugin = require('webpack/lib/optimize/AggressiveMergingPlugin');
 const CompressionPlugin = require('compression-webpack-plugin');
+const EsLintFormatter = require('eslint/lib/formatters/json');
 
 module.exports = {
   devtool: 'source-map',
-  entry: [
-    
-    './client/reduxstagram'
-  ],
   output: {
-    path: path.join(__dirname, 'dist'),
+    path: path.join(__dirname, 'public'),
     filename: 'bundle.js',
-    publicPath: '/static/'
+    publicPath: '/public/',
   },
   optimization: {
     minimizer: [
@@ -52,7 +49,7 @@ module.exports = {
             formatter: EsLintFormatter,
           },
         },
-  
+
       },
       {
         test: /\.js$/,
@@ -60,14 +57,14 @@ module.exports = {
         use: 'babel-loader',
         include: path.join(__dirname, 'src'),
       },
-      
+
       // CSS
-      { 
-        test: /\.css$/, 
+      {
+        test: /\.css$/,
         include: path.join(__dirname, 'src'),
         use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
-  
-      }
-      ]
-  }
+
+      },
+    ],
+  },
 };

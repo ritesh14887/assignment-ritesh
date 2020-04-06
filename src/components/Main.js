@@ -15,11 +15,11 @@ const maxWidth = 767;
 const appStyles = {
   '@font-face': [{
     fontFamily: 'PatrickHand',
-    src: 'url(/fonts/PatrickHand-Regular.ttf)',
+    src: 'url(public/fonts/PatrickHand-Regular.ttf)',
   },
   {
     fontFamily: 'Giffy',
-    src: 'url(/fonts/Griffy-Regular.ttf)',
+    src: 'url(public/fonts/Griffy-Regular.ttf)',
   }],
   wrapper: {
     fontFamily: 'PatrickHand',
