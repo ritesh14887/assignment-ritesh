@@ -8,6 +8,7 @@ import Filters from './filters';
 import palette from '../theme/palette';
 import SearchSortPanel from './searchSortPanel';
 import { fetchFilteredCharcterBegin } from '../actions/actionCreators';
+import Pagination from './pagination';
 
 const maxWidth = 767;
 
@@ -92,6 +93,7 @@ class Main extends React.Component {
         gender: '',
         status: '',
         name: '',
+        page: '1',
       },
     };
   }
@@ -109,6 +111,8 @@ class Main extends React.Component {
       filtersData.species = value;
     } else if (keyword === 'Name') {
       filtersData.name = value;
+    } else if (keyword === 'Page') {
+      filtersData.page = value;
     }
 
     // eslint-disable-next-line no-restricted-syntax
@@ -121,7 +125,8 @@ class Main extends React.Component {
   };
 
   render() {
-    const { classes, charcterData } = this.props;
+    const { classes, appData } = this.props;
+    console.log('appData', appData.charcter);
 
     return (
 
@@ -130,10 +135,11 @@ class Main extends React.Component {
         <div className={classes.wrapper}>
           <Filters getResults={this.getResults} filtersData={this.filtersData} style={classes.filterContainer} />
           <div className={classes.charcterContainer}>
+            <Pagination getResults={this.getResults} pageData={appData.charcter} filtersData={this.filtersData} />
             <SearchSortPanel getResults={this.getResults} filtersData={this.filtersData} />
             <div className={classes.charcterList}>
-              {!charcterData.isloading && charcterData.charcter.charcters
-                ? <Charcterlist charcters={charcterData.charcter.charcters} />
+              {!appData.isloading && appData.charcter.charcters
+                ? <Charcterlist charcters={appData.charcter.charcters} />
                 : <h3>Loading...</h3>}
             </div>
           </div>
@@ -149,7 +155,7 @@ Main.defaultProps = {
 function mapStateToProps(state) {
   console.log('state', state);
   return {
-    charcterData: state,
+    appData: state,
   };
 }
 const mapDispatchToProps = dispatch => ({

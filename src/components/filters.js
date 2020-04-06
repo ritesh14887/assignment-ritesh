@@ -7,7 +7,6 @@ import palette from '../theme/palette';
 
 import { fetchFilteredCharcterBegin } from '../actions/actionCreators';
 
-const maxWidth = 767;
 const filterStyles = {
   headingBox: {
     padding: '8px 20px',
