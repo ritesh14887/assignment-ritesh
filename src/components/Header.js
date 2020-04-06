@@ -1,6 +1,8 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss';
+import palette from '../theme/palette';
 
+const maxWidth = 767;
 const headerStyles = createUseStyles({
   bannerImage: {
     width: '100%',
@@ -9,9 +11,22 @@ const headerStyles = createUseStyles({
     fontSize: 60,
     margin: 0,
     textAlign: 'center',
-    color: '#ffffff',
-    backgroundColor: '#000',
+    color: palette.primary.white,
+    backgroundColor: palette.primary.black,
   },
+  '@media (max-width: 767px)': {
+    bannerImage: {
+      fontSize: 30,
+      padding: '10px 0 0 0',
+    },
+  },
+  '@media (max-width: 1023px)': {
+    bannerImage: {
+      fontSize: 30,
+      padding: '10px 0 0 0',
+    },
+  },
+
 });
 
 const Header = (props) => {

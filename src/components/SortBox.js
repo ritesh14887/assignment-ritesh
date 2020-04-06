@@ -7,10 +7,15 @@ class SortBox extends Component {
     super();
   }
 
+  sortCharacters = () => {
+    console.log('Search Begin');
+  }
+
+
   render() {
     return (
       <div className="sort-box">
-        <select>
+        <select onChange={this.sortCharacters}>
           <option>Name A-Z</option>
           <option>Name Z-A</option>
         </select>
@@ -18,5 +23,6 @@ class SortBox extends Component {
     );
   }
 }
+
 
 export default SortBox;

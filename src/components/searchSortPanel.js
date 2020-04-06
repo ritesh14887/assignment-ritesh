@@ -4,12 +4,12 @@ import React, { Component } from 'react';
 import { withStyles } from 'react-jss';
 import SearchBox from './SearchBox';
 import SortBox from './SortBox';
+import palette from '../theme/palette';
 
 const searchPanelStyles = {
   searchPanel: {
     display: 'flex',
     padding: 15,
-    borderTop: 'solid 1px #ccc',
     alignItems: 'flex-end',
     justifyContent: 'space-between',
     fontFamily: 'PatrickHand',
@@ -19,18 +19,27 @@ const searchPanelStyles = {
         display: 'flex',
         height: 28,
         width: 200,
+        fontFamily: 'PatrickHand',
+        fontSize: 16,
+        paddingLeft: 10,
+
       },
       '& button': {
-        backgroundColor: '#e32f2f',
-        color: '#fff',
+        backgroundColor: palette.primary.blue,
+        color: palette.primary.white,
         width: 80,
+        fontFamily: 'PatrickHand',
+        fontSize: 18,
       },
 
     },
-    '& select': {
-      flex: 1,
-      width: 130,
-      height: 34,
+    '& .sort-box': {
+      backgroundColor: palette.primary.white,
+      '& select': {
+        flex: 1,
+        width: 130,
+        height: 34,
+      },
     },
   },
 };
@@ -39,12 +48,13 @@ class SearchBar extends Component {
     super();
   }
 
+
   render() {
-    const { classes } = this.props;
+    const { classes, getResults } = this.props;
     return (
       <div className={classes.searchPanel}>
-        <SearchBox />
-        <SortBox />
+        <SearchBox getResults={getResults} />
+        {/* <SortBox /> */}
       </div>
     );
   }

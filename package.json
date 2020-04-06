@@ -50,7 +50,9 @@
     "webpack-dev-middleware": "^3.7.2",
     "webpack-hot-middleware": "^2.25.0",
     "uglifyjs-webpack-plugin": "2.1.2",
-    "compression-webpack-plugin": "1.1.12"
+    "compression-webpack-plugin": "1.1.12",
+    "husky": "2.3.0",
+    "lint-staged": "8.1.7"
   },
   "devDependencies": {
     "lint-staged": "8.1.7",

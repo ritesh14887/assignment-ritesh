@@ -1,17 +1,18 @@
 import React from 'react';
 import { withStyles } from 'react-jss';
+import palette from '../theme/palette';
 
-
+const maxWidth = 767;
 const charcterStyles = {
   charcter: {
     width: 'calc(25% - 20px)',
-    border: 'solid 1px #6c2525',
-    boxShadow: '0 0 15px 0px #ff000061',
+    border: 'solid 1px #0057ff57',
+    boxShadow: '0 0 15px 0px #3955ffa1',
     marginLeft: 15,
     marginBottom: 15,
-    backgroundColor: '#333333',
+    backgroundColor: palette.primary.charcoal,
     '& .image-box': {
-      borderBottom: 'solid 1px #ccc',
+      borderBottom: `'solid 1px' ${palette.primary.silver}`,
       position: 'relative',
       marginBottom: '10px',
       minHeight: '200px',
@@ -27,12 +28,12 @@ const charcterStyles = {
         backgroundColor: 'rgba(0, 0, 0, 0.7)',
         padding: '0 10px',
         '& .name': {
-          color: '#fff',
+          color: palette.primary.white,
           margin: '10px 0 0 0',
           fontSize: '16px',
         },
         '& .id': {
-          color: '#fff',
+          color: palette.primary.white,
           margin: '10px 0 10px 0',
           fontSize: '12px',
         },
@@ -59,6 +60,21 @@ const charcterStyles = {
 
   },
 
+
+  '@media (max-width: 1023px)': {
+    charcter: {
+      width: 'calc(33% - 16px)',
+      marginLeft: 10,
+      marginBottom: 10,
+    },
+  },
+  '@media (max-width: 767px)': {
+    charcter: {
+      width: 'calc(50% - 16px)',
+      marginLeft: 10,
+      marginBottom: 10,
+    },
+  },
 
 };
 
