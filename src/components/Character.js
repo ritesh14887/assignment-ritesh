@@ -1,87 +1,11 @@
 import React from 'react';
 import { withStyles } from 'react-jss';
-import palette from '../theme/palette';
+import { charcterStyles } from './styles';
 
-const maxWidth = 767;
-const charcterStyles = {
-  charcter: {
-    width: 'calc(25% - 20px)',
-    border: 'solid 1px #0057ff57',
-    boxShadow: '0 0 15px 0px #3955ffa1',
-    marginLeft: 15,
-    marginBottom: 15,
-    backgroundColor: palette.primary.charcoal,
-    '& .image-box': {
-      borderBottom: `'solid 1px' ${palette.primary.silver}`,
-      position: 'relative',
-      marginBottom: '10px',
-      minHeight: '200px',
-      '& .character-pic': {
-        width: '100%',
-        display: 'block',
-      },
-      '& .details-overlay': {
-        position: 'absolute',
-        bottom: '0',
-        left: '0',
-        right: '0',
-        backgroundColor: 'rgba(0, 0, 0, 0.7)',
-        padding: '0 10px',
-        '& .name': {
-          color: palette.primary.white,
-          margin: '10px 0 0 0',
-          fontSize: '16px',
-        },
-        '& .id': {
-          color: palette.primary.white,
-          margin: '10px 0 10px 0',
-          fontSize: '12px',
-        },
-      },
-
-    },
-    '& .item-detail': {
-      fontSize: '14px',
-      display: 'flex',
-      justifyContent: 'space-between',
-      margin: '0 5px 4px 5px',
-      borderBottom: 'solid 1px #444444',
-      padding: '6px 0 6px 0',
-      alignItems: 'center',
-      '& .title ': {
-        color: '#d1d1d1',
-      },
-      '& .description': {
-        color: ' #e78c0c',
-        fontWeight: 700,
-      },
-
-    },
-
-  },
-
-
-  '@media (max-width: 1023px)': {
-    charcter: {
-      width: 'calc(33% - 16px)',
-      marginLeft: 10,
-      marginBottom: 10,
-    },
-  },
-  '@media (max-width: 767px)': {
-    charcter: {
-      width: 'calc(50% - 16px)',
-      marginLeft: 10,
-      marginBottom: 10,
-    },
-  },
-
-};
 
 class Character extends React.Component {
   constructor(props) {
-    super(props);
-    this.state = {};
+    super();
   }
 
   render() {

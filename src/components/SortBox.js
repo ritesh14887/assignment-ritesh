@@ -7,10 +7,6 @@ class SortBox extends Component {
     super();
   }
 
-  sortCharacters = () => {
-    console.log('Search Begin');
-  }
-
 
   render() {
     return (

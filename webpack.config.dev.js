@@ -5,7 +5,6 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const EsLintFormatter = require('eslint/lib/formatters/json');
 
-console.log(__dirname);
 
 module.exports = {
   devtool: 'inline-source-map',
