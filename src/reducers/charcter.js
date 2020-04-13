@@ -18,7 +18,6 @@ export default function charcterReducer(
       };
 
     case 'FETCH_CHARCTER_SUCCESS':
-      console.log('FETCH_CHARCTER_SUCCESS>>>>>> Reducer', action);
       return {
         ...state,
         isloading: false,
@@ -27,7 +26,6 @@ export default function charcterReducer(
       };
 
     case 'FETCH_FILTERED_CHARCTER_SUCCESS':
-      console.log('FETCH_FILTERED_CHARCTER_SUCCESS>>>>>> Reducer', action);
       return {
         ...state,
         isloading: false,

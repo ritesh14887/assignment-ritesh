@@ -13,7 +13,6 @@ function* actionWatcher() {
   yield takeLatest('FETCH_FILTERED_CHARCTER_BEGIN', fetchCharcters);
 }
 export default function* rootSaga() {
-  console.log('rootsaga');
   yield all([
     actionWatcher(),
   ]);

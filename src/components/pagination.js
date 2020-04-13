@@ -2,22 +2,7 @@
 
 import React, { Component } from 'react';
 import { withStyles } from 'react-jss';
-import palette from '../theme/palette';
-
-const paginationStyle = {
-  pagination: {
-    margin: 10,
-    '& .page-link': {
-      color: '#FFFFFF',
-      border: '1px solid #FFFFFF',
-      margin: 5,
-      padding: 5,
-      borderRadius: 3,
-      textDecoration: 'none',
-      background: 'transparent',
-    },
-  },
-};
+import { paginationStyle } from './styles';
 
 
 class Pagination extends Component {
@@ -31,7 +16,6 @@ class Pagination extends Component {
     for (let i = 1; i <= 25; i += 1) {
       paging.push(i);
     }
-    console.log(paging);
     return paging;
   }
 

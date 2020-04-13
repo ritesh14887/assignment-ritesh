@@ -4,8 +4,6 @@ import * as actionCreators from '../actions/actionCreators';
 import Main from './Main';
 
 function mapStateToProps(state) {
-  // eslint-disable-next-line no-console
-  console.log('state', state);
   return {
     charcterData: state,
   };
