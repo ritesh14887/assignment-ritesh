@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pagination renders correctly 1`] = `
+<div
+  className="Pagination-pagination-0-2-1"
+>
+  <button
+    className="page-link"
+    onClick={[Function]}
+    type="button"
+    value={1}
+  >
+    1
+  </button>
+  <button
+    className="page-link"
+    onClick={[Function]}
+    type="button"
+    value={2}
+  >
+    2
+  </button>
+</div>
+`;

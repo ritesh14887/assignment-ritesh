@@ -34,25 +34,9 @@ render() {
       {pagedata
     && (
     <div className={classes.pagination}>
-      {/* <button
-        className="page-link"
-        type="button"
-        value={pagedata.prev}
-        onClick={this.handlePageChange}
-      >
-        PREV
-      </button> */}
       {this.createPaging(pagedata.pages).map(value => (
         <button className="page-link" type="button" value={value} onClick={this.handlePageChange}>{value}</button>
       ))}
-      {/* <button
-        className="page-link"
-        type="button"
-        value={pagedata.next}
-        onClick={this.handlePageChange}
-      >
-       NEXT
-      </button> */}
     </div>
     )
       }
