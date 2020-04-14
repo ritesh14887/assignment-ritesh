@@ -42,6 +42,9 @@ application is deployed at https://hacker-news-exercise.now.sh/
 - [JSS](https://github.com/cssinjs/jss) - styling framework
 - [JEST](https://jestjs.io/) - testing framework
 
+## Live at
+https://rick-and-morty-sample-app.now.sh/
+
 ## Authors
 
 - **Ritesh Kashyap** - [ritesh14887](https://github.com/ritesh14887)
