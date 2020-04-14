@@ -10,29 +10,53 @@ class Pagination extends Component {
     super();
   }
 
-  createPaging = () => {
-    const { pagination } = this.props;
-    const paging = [];
-    for (let i = 1; i <= 25; i += 1) {
-      paging.push(i);
-    }
-    return paging;
-  }
-
 
 handlePageChange = (event) => {
   const { getResults } = this.props;
   getResults('Page', event.target.value);
 };
 
+
+createPaging = (pages) => {
+  const paging = [];
+  for (let i = 1; i <= pages; i += 1) {
+    paging.push(i);
+  }
+  return paging;
+}
+
+
 render() {
-  const { classes } = this.props;
+  const { pagedata, classes } = this.props;
+
   return (
+    <React.Fragment>
+      {pagedata
+    && (
     <div className={classes.pagination}>
-      {this.createPaging().map(value => (
+      {/* <button
+        className="page-link"
+        type="button"
+        value={pagedata.prev}
+        onClick={this.handlePageChange}
+      >
+        PREV
+      </button> */}
+      {this.createPaging(pagedata.pages).map(value => (
         <button className="page-link" type="button" value={value} onClick={this.handlePageChange}>{value}</button>
       ))}
+      {/* <button
+        className="page-link"
+        type="button"
+        value={pagedata.next}
+        onClick={this.handlePageChange}
+      >
+       NEXT
+      </button> */}
     </div>
+    )
+      }
+    </React.Fragment>
   );
 }
 }

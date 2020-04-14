@@ -10,7 +10,7 @@ const EsLintFormatter = require('eslint/lib/formatters/json');
 module.exports = {
   devtool: 'source-map',
   output: {
-    path: path.join(__dirname, 'public'),
+    path: path.join(__dirname, 'dist'),
     filename: 'bundle.js',
     publicPath: '/public/',
   },
