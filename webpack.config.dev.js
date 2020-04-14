@@ -59,14 +59,6 @@ module.exports = {
         use: 'babel-loader',
         include: path.join(__dirname, 'src'),
       },
-
-      // CSS
-      {
-        test: /\.css$/,
-        include: path.join(__dirname, 'src'),
-        use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
-
-      },
     ],
   },
 };

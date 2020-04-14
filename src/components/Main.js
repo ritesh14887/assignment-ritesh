@@ -52,7 +52,7 @@ class Main extends React.Component {
 
   render() {
     const { classes, appData } = this.props;
-    console.log(appStyles);
+    console.log(appData.charcter.info, typeof (appData.charcter.info));
     return (
 
       <React.Fragment>
@@ -60,13 +60,14 @@ class Main extends React.Component {
         <div className={classes.wrapper}>
           <Filters getResults={this.getResults} filtersData={this.filtersData} style={classes.filterContainer} />
           <div className={classes.charcterContainer}>
-            <Pagination getResults={this.getResults} pageData={appData.charcter} filtersData={this.filtersData} />
+
             <SearchSortPanel getResults={this.getResults} filtersData={this.filtersData} />
             <div className={classes.charcterList}>
               {!appData.isloading && appData.charcter.charcters
                 ? <Charcterlist charcters={appData.charcter.charcters} />
                 : <h3>Loading...</h3>}
             </div>
+            <Pagination getResults={this.getResults} pagedata={appData.charcter.info} filtersData={this.filtersData} />
           </div>
         </div>
       </React.Fragment>

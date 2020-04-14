@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pagination renders correctly 1`] = `
+<div
+  className="search-wrap"
+>
+  <form
+    className="search-box"
+  >
+    <input
+      onChange={[Function]}
+      type="text"
+    />
+    <button
+      onClick={[Function]}
+      type="button"
+    >
+      Search
+    </button>
+  </form>
+</div>
+`;

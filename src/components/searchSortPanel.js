@@ -6,21 +6,13 @@ import SearchBox from './SearchBox';
 import { searchPanelStyles } from './styles';
 
 
-class SearchBar extends Component {
-  constructor(props) {
-    super();
-  }
-
-
-  render() {
-    const { classes, getResults } = this.props;
-    return (
-      <div className={classes.searchPanel}>
-        <SearchBox getResults={getResults} />
-        {/* <SortBox /> */}
-      </div>
-    );
-  }
-}
+const SearchBar = (props) => {
+  const { classes, getResults } = props;
+  return (
+    <div className={classes.searchPanel}>
+      <SearchBox getResults={getResults} />
+    </div>
+  );
+};
 
 export default withStyles(searchPanelStyles)(SearchBar);
